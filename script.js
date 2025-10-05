@@ -1,3 +1,67 @@
+// Click toggle for person icon dropdown
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.querySelector(".dropdown");
+    const menu = dropdown.querySelector(".dropdown_menu");
+
+    dropdown.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation(); // Prevent closing when clicking inside
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    });
+
+    // Close the dropdown when clicking outside
+    document.addEventListener("click", function () {
+      menu.style.display = "none";
+    });
+  });
+
+
+  const openBtn = document.getElementById("open-register");
+  const modal = document.getElementById("registerModal");
+  const closeBtn = document.getElementById("closeModal");
+  const form = document.querySelector(".register-form");
+  const welcomeText = document.getElementById("welcomeText");
+
+  // Open modal on click
+  openBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal.style.display = "block";
+  });
+
+  // Close modal on close button
+  closeBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // Close modal when clicking outside the modal content
+  window.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // On form submit
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+
+    if (name) {
+      welcomeText.innerHTML = `Hi <span class="name-highlight">${name}</span> Welcome to McSmash — the ultimate home for badminton lovers. From beginners finding their rhythm to players chasing victory, we spark passion in every smash and bring energy to every game.`;
+
+      welcomeText.style.pointerEvents = "auto";
+      welcomeText.style.opacity = 0;
+      setTimeout(() => {
+        welcomeText.style.opacity = 1;
+      }, 100);
+
+      modal.style.display = "none";
+      form.reset();
+    }
+  });
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const pageContent = document.getElementById("page-content");
   const clickableImages = document.querySelectorAll(".clickable-image");
@@ -54,6 +118,23 @@ document.addEventListener("DOMContentLoaded", () => {
           countSpan.textContent = count - 1;
         }
       });
+    });
+  });
+
+
+const videoLinks = document.querySelectorAll('.video-link');
+
+  videoLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      const videoUrl = this.getAttribute('data-url');
+      const confirmPlay = confirm('Do you want to play this video?');
+
+      if (confirmPlay) {
+        window.open(videoUrl, '_blank');
+      } 
+      else {
+        alert('Video playback cancelled.');
+      }
     });
   });
 

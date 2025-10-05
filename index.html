@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>McSmash</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   </head>
   <body>
     <!-- Header & Navbar Section -->
@@ -29,33 +27,81 @@
 
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#about" >About</a></li>
           <li><a href="#partners">Partners</a></li>
           <li><a href="#items">Items</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
-    </header>
+
+        <div class="nav_icons">
+      <a href="#"><span class="material-symbols-outlined" style="font-size: 30px;">search</span></a>
+          <div class="dropdown">
+            <a href="#" class="icon">
+              <span class="material-symbols-outlined" style="font-size: 30px;" >person</span>
+            </a>
+           <ul class="dropdown_menu">
+      <li>
+        <span class="material-symbols-outlined">person_add</span>
+        <a href="#" class="person-drop" id="open-register">Register</a>
+        <span class="material-symbols-outlined chevron">chevron_right</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">settings</span>
+        <a href="#" class="person-drop">Settings & Privacy</a>
+        <span class="material-symbols-outlined chevron">chevron_right</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">help</span>
+        <a href="#" class="person-drop">Help & Support</a>
+        <span class="material-symbols-outlined chevron">chevron_right</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">logout</span>
+        <a href="#" class="person-drop">Logout</a>
+        <span class="material-symbols-outlined chevron">chevron_right</span>
+      </li>
+    </ul>
+              </div>
+                <a href="#"><span class="material-symbols-outlined" style="font-size: 30px;">shopping_cart_checkout</span></a>
+              </div>
+        
+          </nav>
+          </nav>
+        </header>
+
+        <div class="modal2" id="registerModal">
+  <div class="modal-content2">
+    <span class="close-modal" id="closeModal">&times;</span>
+    <h2>Register</h2>
+    <form class="register-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
 
 
-      <section class="hero_section">
-  <div class="section_container">
-    <div class="hero_container">
-      <div class="text_section">
-        <h2>SMASH IT</h2>
-        <h3>Unleash Your Power on Court.</h3>
-        <p>
-          Welcome to McSmash, the ultimate home for badminton lovers. From beginners finding their rhythm to players chasing victory, we spark passion in every smash and bring energy to every game.
-        </p>
-
-        <div class="hero_section_button">
-          <button class="button">Order Online</button>
-          <button class="button"><a href="#items">Product List</a></button>
+          <section class="hero_section">
+      <div class="section_container">
+        <div class="hero_container">
+          <div class="text_section">
+            <h2>SMASH IT</h2>
+            <h3>Unleash Your Power on Court.</h3>
+            <p id="welcomeText">
+              Welcome to McSmash, the ultimate home for badminton lovers. From beginners finding their rhythm to players chasing victory, we spark passion in every smash and bring energy to every game.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- About Us Section -->
  <section class="about_us" id="about">
@@ -82,27 +128,33 @@
     <div class="service_container">
 
       <div class="services_items">
-        <a href="https://www.youtube.com/watch?v=Qa8m-j1LGts">
-        <img src="image/item image/Victor.gif" alt="Victor Logo" />
-        </a>
-        <div class="services_text">
-        </div>
+        <img 
+          src="image/item image/Victor.gif" 
+          alt="Victor Logo" 
+          class="video-link" 
+          data-url="https://www.youtube.com/watch?v=Qa8m-j1LGts" 
+        />
+        <div class="services_text"></div>
       </div>
 
       <div class="services_items">
-        <a href="https://www.youtube.com/watch?v=MnSrPV3sdBg">
-        <img src="image/item image/Li-Ning-logo.png" alt="Li-Ning Logo" />
-        </a>
-        <div class="services_text">
-        </div>
+        <img 
+          src="image/item image/Li-Ning-logo.png" 
+          alt="Li-Ning Logo" 
+          class="video-link" 
+          data-url="https://www.youtube.com/watch?v=MnSrPV3sdBg" 
+        />
+        <div class="services_text"></div>
       </div>
 
       <div class="services_items">
-        <a href="https://www.youtube.com/watch?v=KWewNGAxaIs">
-        <img src="image/item image/Logo-Yonex.svg.png" alt="Yonex Logo" />
-        </a>
-        <div class="services_text">
-        </div>
+        <img 
+          src="image/item image/Logo-Yonex.svg.png" 
+          alt="Yonex Logo" 
+          class="video-link" 
+          data-url="https://www.youtube.com/watch?v=KWewNGAxaIs" 
+        />
+        <div class="services_text"></div>
       </div>
 
     </div>
