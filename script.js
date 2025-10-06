@@ -98,6 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+ const aboutText = document.getElementById('aboutText');
+  const toggleBtn = document.getElementById('toggleBtn');
+
+  toggleBtn.addEventListener('click', () => {
+    aboutText.classList.toggle('expanded');
+    toggleBtn.textContent = aboutText.classList.contains('expanded') ? 'Read Less' : 'Read More';
+  });
+
  document.addEventListener("DOMContentLoaded", function () {
     const incrementButtons = document.querySelectorAll('.increment');
     const decrementButtons = document.querySelectorAll('.decrement');
